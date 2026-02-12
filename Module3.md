@@ -3,8 +3,9 @@
 ## Scenario: Automating file backup and Reporting to the system. Create a shell script called "backup_manager.sh" that performs the following tasks incorporating the concepts suggested.
 
 
-#Backup_manager.sh
+# Backup_manager.sh
 
+```bash
 #!/bin/bash
 
 src=$1
@@ -41,6 +42,7 @@ echo "Backup report" > "$dest/backup_report.log"
 echo "Total file backed up: $BACKUP_COUNT" >> "$dest/backup_report.log"
 echo "Backup directory: $dest" >> "$dest/backup_report.log"
 echo "Backup finished" >> "$dest/backup_report.log"
+```
 
 
 <img width="940" height="349" alt="image" src="https://github.com/user-attachments/assets/6dcb3133-f6a2-470f-bcd0-88ba1421ab87" />
