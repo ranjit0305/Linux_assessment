@@ -38,6 +38,13 @@ do
     fi
 done
 
+
+echo "Backup report" > "$dest/backup_report.log"
+echo "Total file backed up:$BACKUP_COUNT" >> "$dest/backup_report.log"
+echo "Backup directory:$dest" >> "$dest/backup_report.log"
+echo "backup finished" >> "$dest/backup_report.log"
+
+
 <img width="940" height="349" alt="image" src="https://github.com/user-attachments/assets/6dcb3133-f6a2-470f-bcd0-88ba1421ab87" />
 
 <img width="940" height="375" alt="image" src="https://github.com/user-attachments/assets/2a6e99b1-a448-4bf3-b304-8651bf3bc141" />
@@ -45,9 +52,4 @@ done
 <img width="940" height="215" alt="image" src="https://github.com/user-attachments/assets/4153a85f-8672-40c8-8830-f288ce68bf4b" />
 
 
-
-echo "Backup report" > "$dest/backup_report.log"
-echo "Total file backed up:$BACKUP_COUNT" >> "$dest/backup_report.log"
-echo "Backup directory:$dest" >> "$dest/backup_report.log"
-echo "backup finished" >> "$dest/backup_report.log"
 
