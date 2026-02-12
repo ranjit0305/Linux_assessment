@@ -33,5 +33,7 @@ Ps -ef
 
 ## 5) Create 3 files in a directory and redirect sorted list output (by timestamp) to a file
 
+ls -lt > resultsorted.txt
+
 <img width="940" height="263" alt="image" src="https://github.com/user-attachments/assets/b44d2594-05be-4bb7-90be-cfbf7ee0aad7" />
 
