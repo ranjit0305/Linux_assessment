@@ -6,7 +6,7 @@ suggested.
 
 #Backup_manager.sh
 
-#!/bin/bash
+#!/bin/bash 
 
 src=$1
 dest=$2
