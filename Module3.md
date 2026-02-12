@@ -1,48 +1,58 @@
 # Linux Module 3
 
-## Scenario: Automating file backup and Reporting to the system. Create a shell script called "backup_manager.sh" that performs the following tasks incorporating the concepts 
-suggested.
+## Scenario: Automating file backup and Reporting to the system. Create a shell script called "backup_manager.sh" that performs the following tasks incorporating the concepts suggested.
 
 
 #Backup_manager.sh
 
-#!/bin/bash 
+#!/bin/bash
 
+# Assign command-line arguments
 src=$1
 dest=$2
 ext=$3
 
+# Check if exactly 3 arguments are provided
 if [ $# -ne 3 ]; then
     echo "Usage: $0 <source_dir> <dest_dir> <extension>"
     exit 1
 fi
 
+# Validate source directory
 if [ ! -d "$src" ]; then
     echo "Source directory not found"
     exit 1
 fi
 
+# Create destination directory if it doesn't exist
 if [ ! -d "$dest" ]; then
     mkdir "$dest"
 fi
 
+# Initialize backup counter
 export BACKUP_COUNT=0
+
+# Enable nullglob so no-match patterns don’t return literal values
 shopt -s nullglob
 
+# Loop through matching files
 for file in "$src"/*"$ext"
 do
     if [ -f "$file" ]; then
         name=$(basename "$file")
         cp "$file" "$dest/$name"
-        BACKUP_COUNT=$((BACKUP_COUNT+1))
+        BACKUP_COUNT=$((BACKUP_COUNT + 1))
     fi
 done
 
-
-echo "Backup report" > "$dest/backup_report.log"
-echo "Total file backed up:$BACKUP_COUNT" >> "$dest/backup_report.log"
-echo "Backup directory:$dest" >> "$dest/backup_report.log"
-echo "backup finished" >> "$dest/backup_report.log"
+# Generate backup report
+{
+    echo "Backup Report"
+    echo "-------------"
+    echo "Total files backed up: $BACKUP_COUNT"
+    echo "Backup directory: $dest"
+    echo "Backup finished successfully."
+} > "$dest/backup_report.log"
 
 
 <img width="940" height="349" alt="image" src="https://github.com/user-attachments/assets/6dcb3133-f6a2-470f-bcd0-88ba1421ab87" />
