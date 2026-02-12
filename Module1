@@ -1,0 +1,7 @@
+# Linux Module 1 – Basic File & Process Operations
+
+## 1️) Create a File and Add Executable Permission to All Users
+
+### Create a file:
+
+touch sample1.txt
