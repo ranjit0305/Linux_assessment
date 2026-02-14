@@ -40,7 +40,6 @@ done < "$input"
 
 echo "Done"
 ```
-<img width="940" height="549" alt="image" src="https://github.com/user-attachments/assets/f4974436-e972-423e-bbdf-f4427c7b3f8a" />
 <img width="940" height="214" alt="image" src="https://github.com/user-attachments/assets/0e0e1bbb-2c96-4bbe-8895-c7e2b5b481cf" />
 
 
