@@ -27,7 +27,6 @@ if [ ! -d "$dest" ]; then
 fi
 
 export BACKUP_COUNT=0
-shopt -s nullglob
 
 for file in "$src"/*"$ext"
 do
