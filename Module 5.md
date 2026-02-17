@@ -10,15 +10,15 @@
 show_help() {
 cat << EOF
 Usage:
-$0 -d directory -k keyword
-$0 -f file -k keyword
+$0 -d <directory> -k <keyword>
+$0 -f <file> -k <keyword>
 $0 --help
 
 Options:
--d   Directory search
+-d   Directory search (recursive)
 -f   File search
--k   Keyword
-EOF
+-k   Keyword to search
+--help   Display help menu
 }
 
 search_dir() {
@@ -33,50 +33,52 @@ done
 }
 
 if [ $# -eq 0 ]; then
-    echo "No arguments" | tee errors.log
+    echo "No arguments provided" | tee -a errors.log >&2
     exit 1
 fi
 
-while getopts "d:f:k:" opt
+if [[ "$1" == "--help" ]]; then
+    show_help
+    exit 0
+fi
+
+while getopts ":d:f:k:" opt
 do
 case $opt in
 d) dir=$OPTARG ;;
 f) file=$OPTARG ;;
 k) key=$OPTARG ;;
-*) show_help; exit 1 ;;
+\?) echo "Invalid option: -$OPTARG" | tee -a errors.log >&2; exit 1 ;;
 esac
 done
 
-if [[ "$*" == *"--help"* ]]; then
-    show_help
-    exit 0
-fi
-
-if ! [[ "$key" =~ ^[a-zA-Z]+$ ]]; then
-    echo "Invalid keyword" | tee errors.log
+if [[ -z "$key" || ! "$key" =~ ^[a-zA-Z0-9_]+$ ]]; then
+    echo "Invalid or empty keyword" | tee -a errors.log >&2
     exit 1
 fi
 
-if [ ! -z "$file" ]; then
+if [ -n "$file" ]; then
     if [ ! -f "$file" ]; then
-        echo "File missing" | tee errors.log
+        echo "File missing: $file" | tee -a errors.log >&2
         exit 1
     fi
-    grep "$key" "$file"
+    content=$(cat "$file")
+    grep "$key" <<< "$content"
 fi
 
-if [ ! -z "$dir" ]; then
+if [ -n "$dir" ]; then
     if [ ! -d "$dir" ]; then
-        echo "Directory missing" | tee errors.log
+        echo "Directory missing: $dir" | tee -a errors.log >&2
         exit 1
     fi
     search_dir "$dir"
 fi
 
-echo "Script name: $0"
-echo "Total args: $#"
-echo "All args: $*"
-echo "Exit status: $?"
+echo "Script Name: $0"
+echo "Total Arguments: $#"
+echo "All Arguments: $@"
+echo "Last Exit Status: $?"
+
 ```
 
 <img width="940" height="239" alt="image" src="https://github.com/user-attachments/assets/30b7a9bc-c9af-4383-bbf4-f493b2718f1a" />
