@@ -2,7 +2,7 @@
 
 ## 1) List All Files Larger Than 1 MB and Save Output
 
-du -m * | awk '$1>1'
+du -m * | awk '$1>1' > output.txt
 
 <img width="940" height="85" alt="image" src="https://github.com/user-attachments/assets/0996e1b7-3fde-42cf-9a7f-d328064e08d9" />
 
