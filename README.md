@@ -1,85 +1,41 @@
-A curated collection of Linux assessment exercises covering essential topics such as file permissions, process management, text processing, and shell scripting using Bash. Designed for practice, evaluation, and hands-on learning.
+# Linux Assessment
 
-🧠 Overview
+A structured collection of Linux assessment exercises covering fundamental and intermediate Linux concepts. This repository is designed for hands-on practice and academic evaluation of core Linux skills.
 
-This repository includes assessments split into modules focusing on fundamental Linux operations:
+## Overview
 
-✔️ File creation and permission manipulation
+This repository contains multiple modules that focus on essential Linux commands, system operations, and shell scripting. Each module includes practical tasks to strengthen command-line proficiency.
 
-✔️ Linking files and directory navigation
+### Topics Covered
 
-✔️ Process listing and management
-
-✔️ Searching, filtering, and text editing
-
-✔️ Shell scripting fundamentals
-
-📂 Modules
-📌 Module 1 – Basic File & Process Operations
-
-Exercises in this module help practice:
-
-Creating and modifying file permissions
-
-Working with soft links
-
-Managing processes using commands like ps
-(Detailed commands and examples are included in the Module1.md file.)
-
-📌 Module 2 – File Searching & Text Processing
-
-This module covers:
-
-Finding large files
-
-Replacing text using sed
-
-Filtering logs with grep
-
-Sorting text and extracting information
-(See Module2.md for specifics.)
-
-📌 Additional Modules
-
-Other modules (Module3, Module4, Module5) contain more advanced Linux tasks; refer to each markdown file for full instructions.
-
-🧪 How to Use
-
-Clone the repository
-
-git clone https://github.com/ranjit0305/Linux_assessment.git
+- File and directory management  
+- File permissions and ownership  
+- Process management  
+- Text processing utilities  
+- Networking commands  
+- Shell scripting concepts  
 
 
-Navigate into the directory
+### Execute commands in a Linux environment
 
-cd Linux_assessment
+You can use:
+- Ubuntu
+- Kali Linux
+- WSL (Windows Subsystem for Linux)
+- Any Unix-based system
 
 
-Open any module file
+## Requirements
 
-nano Module1.md
+- Linux-based operating system (or WSL on Windows)
+- Basic understanding of command-line usage
+
+## Purpose
+
+This repository is intended for:
+
+- Academic assessments  
+- Interview preparation  
+- Self-practice for Linux fundamentals  
 
 
-Follow the instructions and run commands in your Linux terminal
-
-🎯 Skills Covered
-
-Linux filesystem navigation
-
-Permissions and ownership
-
-Shell tools (awk, grep, sed)
-
-Process inspection and control
-
-Bash scripting
-
-📝 Contribution
-
-If you’d like to add more exercises, improve descriptions, or enhance formatting:
-
-Fork the repo
-
-Create a new branch
-
-Submit a Pull Request
